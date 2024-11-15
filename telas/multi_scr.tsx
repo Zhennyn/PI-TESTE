@@ -1,29 +1,35 @@
 import * as React from "react";
-import { Text, StyleSheet, Image, View, TouchableOpacity } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Color, FontFamily, FontSize } from '../GlobalStyles';
+import { Color, FontFamily, FontSize } from './GlobalStyles';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from 'react-native-elements';
+import { AppRoutes } from "../routes";
+
+type Navigation = {
+    navigate: (screen: string) => void;
+  };
 
 const MultiScr = () => {
-  const navigation = useNavigation();
+    const navigation = useNavigation<Navigation>();
 
-  return (
-    <LinearGradient style={styles.multiScr} locations={[0, 0.5, 1]} colors={['#333', 'rgba(34, 34, 34, 0.7)', 'rgba(17, 17, 17, 0.07)']}>
-        <Button>
-            <Text style={[styles.sadeFisca, styles.estudosTypo]}>Saúde Física</Text> // Navegando para a tela de saúde
-        </Button>
-        <Button>
-            <Text style={[styles.tarefasDirias, styles.estudosTypo]}>Tarefas diárias</Text>// Navegando para a tela de tarefas
-        </Button>
-        <Button
-            title="Estudos"
-            onPress={() => navigation.navigate('Estudos')}
-            titleStyle={styles.estudosTypo}
-            buttonStyle={{ backgroundColor: 'transparent' }}
-        />
-    </LinearGradient>
-  );
+    return (
+        <LinearGradient style={styles.multiScr} locations={[0, 0.5, 1]} colors={['#333', 'rgba(34, 34, 34, 0.7)', 'rgba(17, 17, 17, 0.07)']}>
+            <Button>
+                <Text style={[styles.sadeFisca, styles.estudosTypo]}>Saúde Física</Text> // Navegando para a tela de saúde
+            </Button>
+            <Button>
+                <Text style={[styles.tarefasDirias, styles.estudosTypo]}>Tarefas diárias</Text>// Navegando para a tela de tarefas
+            </Button>
+            <Button
+                title="Estudos"
+                onPress={() => navigation.navigate('Estudos')} // Certifique-se de usar o nome correto da rota
+                titleStyle={styles.estudosTypo}
+                buttonStyle={{ backgroundColor: 'transparent' }}
+            />
+
+        </LinearGradient>
+    );
 };
 
 const styles = StyleSheet.create({
