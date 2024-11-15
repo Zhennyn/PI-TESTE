@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     multiScrItemLayout: {
         height: 101,
         width: 131,
-        backgroundColor: 'linear-gradient(to top, #050505 100%, #1A1A1A 70%, #080808 7%)',
+        backgroundColor: 'black',
         position: "absolute",
         transform: [
             {
@@ -130,8 +130,8 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 932,
         overflow: "hidden",
-        opacity: 0.75,
-        backgroundColor: "transparent",
+        opacity: 0.90,
+        backgroundColor: '#000000',
         transform: [
             {
                 rotate: "180deg"
