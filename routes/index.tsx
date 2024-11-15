@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MultiScr from '../telas/multi_scr';
-import Estudos from '../telas/estudos';
+import MultiScr from '../Telas/multi_scr';
+import Estudos from '../Telas/estudos';
 
 const Stack = createNativeStackNavigator();
 
